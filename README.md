@@ -2,7 +2,7 @@
 
 A clean, minimalist weather application that displays current conditions with dynamic backgrounds and unit conversion.
 
-![Weather App Screenshot](.src/assets/weather-app.png)
+![Weather App Screenshot](./src/assets/weather-app.png)
 
 ## Features ✨
 
