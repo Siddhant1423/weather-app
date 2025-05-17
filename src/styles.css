@@ -124,3 +124,39 @@ input,button{
     height: 150px;
     width:fit-content;
 }
+/* Weather-specific Backgrounds */
+.card-container.sunny {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+}
+
+.card-container.cloudy {
+  background: linear-gradient(135deg, #B0C4DE 0%, #778899 100%);
+}
+
+.card-container.rainy {
+  background: linear-gradient(135deg, #4682B4 0%, #1E3F66 100%);
+}
+
+.card-container.thunderstorm {
+  background: linear-gradient(135deg, #4B0082 0%, #000000 100%);
+}
+
+.card-container.snow {
+  background: linear-gradient(135deg, #E6F7FF 0%, #B3E0FF 100%);
+}
+
+.card-container.fog {
+  background: linear-gradient(135deg, #D3D3D3 0%, #A9A9A9 100%);
+}
+
+/* Make sure content remains readable */
+.card-container {
+  color: #333; /* Default text color */
+  position: relative;
+  overflow: hidden;
+}
+
+.card-container.thunderstorm,
+.card-container.rainy {
+  color: white; /* Light text for dark backgrounds */
+}

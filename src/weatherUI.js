@@ -73,6 +73,9 @@ export class WeatherUI {
         // Create main card container
         const cardContainer = document.createElement('div');
         cardContainer.className = 'card-container';
+
+        const weatherClass = this.getWeatherClass(data.currentConditions.icon);
+        cardContainer.classList.add(weatherClass);
         
         // Create heading container
         const headingContainer = document.createElement('div');
@@ -95,7 +98,7 @@ export class WeatherUI {
         
         const icons = document.createElement('img');
         icons.src = iconUrl;
-        icons.alt = data.currentConditions.conditions;
+        icons.alt = data.currentConditions.icon;
         
         icons.onerror = () => {
             throw new Error(`Failed to load ${iconPath}`);
@@ -151,5 +154,23 @@ export class WeatherUI {
         this.toggleBtn.textContent = this.unitManager.isMetric 
             ? 'IMPERIAL' 
             : 'METRIC';
+    }
+
+    getWeatherClass(iconName) {
+        const weatherMap = {
+            'clear-day': 'sunny',
+            'clear-night': 'sunny',
+            'rain': 'rainy',
+            'snow': 'snow',
+            'sleet': 'rainy',
+            'wind': 'cloudy',
+            'fog': 'fog',
+            'cloudy': 'cloudy',
+            'partly-cloudy-day': 'cloudy',
+            'partly-cloudy-night': 'cloudy',
+            'thunderstorm': 'thunderstorm'
+        };
+        
+        return weatherMap[iconName] || 'sunny'; // default to sunny
     }
 }
